@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impor Transaksi - VisionStock</title>
+  <script src="assets/js/transactions.js" defer></script>
+</head>
+<body>
+  <header>
+    <p><a href="dashboard.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi aplikasi">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="data-stok.html">Data Stok</a></li>
+        <li><a href="analisis-stok.html">Analisis Stok</a></li>
+        <li><a href="riwayat-transaksi.html">Riwayat Transaksi</a></li>
+        <li><a href="pengaturan.html">Pengaturan</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Impor Transaksi</h1>
+    <p>Pilih unggah file Excel atau catat transaksi secara manual.</p>
+    <nav aria-label="Pilihan input transaksi">
+      <ul>
+        <li><a href="#excel">Unggah Excel</a></li>
+        <li><a href="#manual">Input Manual</a></li>
+      </ul>
+    </nav>
+    <section id="excel" aria-labelledby="judul-excel">
+      <h2 id="judul-excel">Unggah Excel</h2>
+      <p>File harus berformat .xlsx dan berukuran maksimal 10 MB.</p>
+      <form>
+        <p>
+          <label for="file-transaksi">Pilih file Excel</label>
+          <input id="file-transaksi" name="file" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required>
+        </p>
+        <button type="button">Unggah File</button>
+      </form>
+      <p>Progres unggah akan ditampilkan saat proses berlangsung.</p>
+      <p>Template Excel belum tersedia sebagai file pada prototype statis ini.</p>
+      <section aria-labelledby="validasi-excel">
+        <h3 id="validasi-excel">Validasi Data</h3>
+        <ul>
+          <li>Kolom wajib harus terisi.</li>
+          <li>Jumlah terjual harus berupa bilangan bulat positif.</li>
+          <li>Transaksi yang melebihi stok tersedia tidak boleh disimpan.</li>
+          <li>Baris yang gagal perlu dilaporkan bersama nomor baris dan alasannya.</li>
+        </ul>
+      </section>
+      <details>
+        <summary>Pratinjau laporan baris gagal</summary>
+        <p>Laporan nomor baris dan alasan akan tampil setelah file divalidasi.</p>
+      </details>
+      <details>
+        <summary>Pratinjau impor berhasil</summary>
+        <p>Impor transaksi berhasil.</p>
+        <p><a href="riwayat-transaksi.html">Lihat Riwayat Transaksi</a></p>
+      </details>
+    </section>
+    <section id="manual" aria-labelledby="judul-manual">
+      <h2 id="judul-manual">Input Manual</h2>
+      <form id="manual-transaction-form">
+        <p>
+          <label for="nama-produk">Nama Produk</label>
+          <select id="nama-produk" name="produk" required>
+            <option value="">Pilih produk</option>
+          </select>
+          <br><small>Tambahkan produk melalui Data Stok jika daftar produk belum tersedia.</small>
+        </p>
+        <p>
+          <label for="stok-terjual">Stok Terjual</label>
+          <input id="stok-terjual" name="jumlah_terjual" type="number" min="1" step="1" required>
+        </p>
+        <p>
+          <label for="tanggal-terjual">Tanggal Terjual</label>
+          <input id="tanggal-terjual" name="tanggal_terjual" type="date" required>
+        </p>
+        <p>
+          <label for="invoice">Bukti Invoice</label>
+          <input id="invoice" name="invoice" type="file" accept=".pdf,.jpg,.jpeg,.png">
+          <br><small>Maksimal 5 MB. Format yang diterima: PDF, JPG, atau PNG.</small>
+        </p>
+        <button type="submit">Simpan Transaksi</button>
+        <button type="reset">Reset</button>
+      </form>
+      <p id="manual-transaction-status" role="status" aria-live="polite"></p>
+      <aside aria-label="Peringatan jumlah transaksi">
+        <p>Peringatan: jika jumlah terjual melebihi stok tersedia, transaksi tidak akan disimpan. Stok tidak boleh negatif.</p>
+      </aside>
+      <details>
+        <summary>Pratinjau transaksi berhasil disimpan</summary>
+        <p>Transaksi berhasil disimpan dan stok produk diperbarui.</p>
+        <p><a href="riwayat-transaksi.html">Lihat Riwayat Transaksi</a></p>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

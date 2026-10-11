@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impor Data Stok - VisionStock</title>
+  <script src="assets/js/inventory.js" defer></script>
+</head>
+<body>
+  <header>
+    <p><a href="dashboard.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi aplikasi">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="data-stok.html" aria-current="page">Data Stok</a></li>
+        <li><a href="analisis-stok.html">Analisis Stok</a></li>
+        <li><a href="riwayat-transaksi.html">Riwayat Transaksi</a></li>
+        <li><a href="pengaturan.html">Pengaturan</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Impor Data Stok</h1>
+    <p>Pilih unggah file Excel atau input data produk secara manual.</p>
+    <nav aria-label="Pilihan input data stok">
+    </nav>
+    <section id="excel" aria-labelledby="judul-excel">
+      <h2 id="judul-excel">Unggah Excel</h2>
+      <p>File harus berformat .xlsx dan berukuran maksimal 10 MB.</p>
+      <form>
+        <p>
+          <label for="file-stok">Pilih file Excel</label>
+          <input id="file-stok" name="file" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required>
+        </p>
+      </form>
+      <p>Progres unggah akan ditampilkan saat proses berlangsung.</p>
+      <section aria-labelledby="validasi-excel">
+        <h3 id="validasi-excel">Validasi Data</h3>
+        <ul>
+          <li>Kolom wajib harus terisi.</li>
+          <li>Stok harus berupa bilangan bulat nol atau lebih.</li>
+        </ul>
+      </section>
+      <details>
+        <summary>Pratinjau impor berhasil</summary>
+        <p>Impor data stok berhasil.</p>
+        <p><a href="data-stok.html">Lihat Data Stok</a></p>
+      </details>
+    </section>
+    <section id="manual" aria-labelledby="judul-manual">
+      <h2 id="judul-manual">Impor Manual</h2>
+      <form id="manual-product-form">
+        <p>
+          <label for="nama-produk">Nama Produk</label>
+          <input id="nama-produk" name="nama" type="text" required>
+        </p>
+        <p>
+          <label for="deskripsi-produk">Deskripsi Produk</label>
+          <textarea id="deskripsi-produk" name="deskripsi" rows="4"></textarea>
+        </p>
+        <p>
+          <label for="gambar-produk">Gambar Produk</label>
+          <input id="gambar-produk" name="gambar" type="file" accept=".jpg,.jpeg,.png">
+          <br><small>Maksimal 5 MB. Format yang diterima: JPG atau PNG.</small>
+        </p>
+        <p>
+          <label for="stok-produk">Stok Produk</label>
+          <input id="stok-produk" name="stok" type="number" min="0" step="1" required>
+        </p>
+        <p>
+          <label for="jenis-produk">Jenis Produk</label>
+          <input id="jenis-produk" name="jenis_produk" type="text" required>
+        </p>
+        <button type="submit">Simpan</button>
+        <button type="reset">Reset</button>
+      </form>
+      <p id="manual-product-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</body>
+</html>

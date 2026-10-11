@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Stok - VisionStock</title>
+  <script src="assets/js/inventory.js" defer></script>
+</head>
+<body>
+  <header>
+    <p><a href="dashboard.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi aplikasi">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="data-stok.html" aria-current="page">Data Stok</a></li>
+        <li><a href="analisis-stok.html">Analisis Stok</a></li>
+        <li><a href="riwayat-transaksi.html">Riwayat Transaksi</a></li>
+        <li><a href="pengaturan.html">Pengaturan</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Data Stok</h1>
+    <p>Kelola produk, jumlah stok, deskripsi, dan jenis produk.</p>
+    <p>
+      <a href="impor-data.html">Impor Stok</a>
+    </p>
+    <form id="product-search" role="search">
+      <label for="cari-produk">Cari produk</label>
+      <input id="cari-produk" name="q" type="search">
+      <button type="submit">Cari</button>
+    </form>
+    <form id="product-filters">
+      <fieldset>
+        <legend>Filter Data Stok</legend>
+        <label for="urut-nama">Abjad</label>
+        <select id="urut-nama" name="urut_nama">
+          <option value="">Pilih urutan</option>
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+        </select>
+        <label for="urut-stok">Stok</label>
+        <select id="urut-stok" name="urut_stok">
+          <option value="">Pilih urutan</option>
+          <option value="terbanyak">Terbanyak</option>
+          <option value="tersedikit">Tersedikit</option>
+        </select>
+        <label for="jenis-produk">Jenis Produk</label>
+        <select id="jenis-produk" name="jenis_produk">
+          <option value="">Semua jenis</option>
+        </select>
+        <button type="submit">Terapkan Filter</button>
+      </fieldset>
+    </form>
+    <p id="inventory-status" role="status" aria-live="polite"></p>
+    <section aria-labelledby="daftar-produk">
+      <h2 id="daftar-produk">Daftar Produk</h2>
+      <p>Data contoh untuk pratinjau halaman:</p>
+      <ul id="product-list" aria-live="polite"></ul>
+      <p id="empty-products" hidden>Tidak ada produk yang cocok dengan pencarian atau filter.</p>
+    </section>
+  </main>
+</body>
+</html>

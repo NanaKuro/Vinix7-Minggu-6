@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riwayat Transaksi - VisionStock</title>
+  <script src="assets/js/transactions.js" defer></script>
+</head>
+<body>
+  <header>
+    <p><a href="dashboard.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi aplikasi">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="data-stok.html">Data Stok</a></li>
+        <li><a href="analisis-stok.html">Analisis Stok</a></li>
+        <li><a href="riwayat-transaksi.html" aria-current="page">Riwayat Transaksi</a></li>
+        <li><a href="pengaturan.html">Pengaturan</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Riwayat Transaksi</h1>
+    <p>Catat penjualan untuk memantau riwayat dan menjadi dasar analisis stok.</p>
+    <nav aria-label="Aksi transaksi">
+      <ul>
+        <li>
+          <button id="import-transactions-button" type="button">Impor Transaksi</button>
+        </li>
+        <li>
+          <button id="edit-transactions-button" type="button">Edit Transaksi</button>
+        </li>
+      </ul>
+    </nav>
+    <form id="transaction-search" role="search">
+      <label for="cari-transaksi">Cari transaksi</label>
+      <input id="cari-transaksi" name="q" type="search">
+      <button type="submit">Cari</button>
+    </form>
+    <form id="transaction-filters">
+      <fieldset>
+        <legend>Filter Riwayat Transaksi</legend>
+        <label for="urut-transaksi">Abjad</label>
+        <select id="urut-transaksi" name="urut_nama">
+          <option value="">Pilih urutan</option>
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+        </select>
+        <label for="urut-jumlah">Stok Terjual</label>
+        <select id="urut-jumlah" name="urut_jumlah">
+          <option value="">Pilih urutan</option>
+          <option value="terbanyak">Terbanyak</option>
+          <option value="tersedikit">Tersedikit</option>
+        </select>
+        <label for="tanggal-transaksi">Tanggal</label>
+        <input id="tanggal-transaksi" name="tanggal" type="date">
+        <button type="submit">Terapkan Filter</button>
+      </fieldset>
+    </form>
+    <p id="transaction-status" role="status" aria-live="polite"></p>
+    <section aria-labelledby="daftar-transaksi">
+      <h2 id="daftar-transaksi">Daftar Transaksi</h2>
+      <table>
+        <caption>Riwayat transaksi penjualan dan bukti invoice</caption>
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama Produk</th>
+            <th scope="col">Stok Terjual</th>
+            <th scope="col">Tanggal</th>
+            <th scope="col">Invoice</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-list">
+          <tr>
+            <td>1</td>
+            <th scope="row">Beras</th>
+            <td>20</td>
+            <td>1/1/2026</td>
+            <td><img src="assets/SVG%20File/photo.svg" alt="Invoice Beras"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <th scope="row">Buku</th>
+            <td>30</td>
+            <td>1/1/2026</td>
+            <td><img src="assets/SVG%20File/photo.svg" alt="Invoice Buku"></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <th scope="row">Pena</th>
+            <td>25</td>
+            <td>1/1/2026</td>
+            <td><img src="assets/SVG%20File/photo.svg" alt="Invoice Pena"></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <th scope="row">Susu</th>
+            <td>45</td>
+            <td>1/1/2026</td>
+            <td><img src="assets/SVG%20File/photo.svg" alt="Invoice Susu"></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <th scope="row">Telur</th>
+            <td>10</td>
+            <td>1/1/2026</td>
+            <td><img src="assets/SVG%20File/photo.svg" alt="Invoice Telur"></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <th scope="row">Tepung</th>
+            <td>30</td>
+            <td>1/1/2026</td>
+            <td><img src="assets/SVG%20File/photo.svg" alt="Invoice Tepung"></td>
+          </tr>
+        </tbody>
+      </table>
+      <p id="empty-transactions" hidden>Tidak ada transaksi yang cocok dengan pencarian atau filter.</p>
+    </section>
+    <aside aria-label="Peringatan stok">
+      <p>Peringatan: jumlah terjual yang melebihi stok tersedia tidak boleh disimpan karena dapat membuat stok negatif.</p>
+    </aside>
+  </main>
+</body>
+</html>

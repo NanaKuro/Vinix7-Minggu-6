@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Stok - VisionStock</title>
+  <script src="assets/js/inventory.js" defer></script>
+</head>
+<body>
+  <header>
+    <p><a href="dashboard.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi aplikasi">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="data-stok.html" aria-current="page">Data Stok</a></li>
+        <li><a href="analisis-stok.html">Analisis Stok</a></li>
+        <li><a href="riwayat-transaksi.html">Riwayat Transaksi</a></li>
+        <li><a href="pengaturan.html">Pengaturan</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Edit Stok</h1>
+    <p id="edit-status" role="status" aria-live="polite"></p>
+    <form id="edit-product-form">
+      <figure>
+        <img id="edit-product-image" src="assets/images/beras.png" alt="">
+        <figcaption id="edit-product-caption"></figcaption>
+      </figure>
+      <p>
+        <label for="edit-product-name">Nama Produk</label><br>
+        <input id="edit-product-name" name="nama" type="text" required>
+      </p>
+      <p>
+        <label for="edit-product-stock">Stok Produk</label><br>
+        <input id="edit-product-stock" name="stok" type="number" min="0" step="1" required>
+      </p>
+      <p>
+        <label for="edit-product-category">Jenis Produk</label><br>
+        <input id="edit-product-category" name="jenis_produk" type="text" required>
+      </p>
+      <button id="save-product" type="submit">Simpan</button>
+      <button id="cancel-edit" type="button">Batal</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk - VisionStock</title>
+</head>
+<body>
+  <header>
+    <p><a href="landing-page.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li>
+          <form action="register.html" method="get">
+            <button type="submit">Daftar</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Masuk ke VisionStock</h1>
+    <img src="assets/images/image-login-regis.png" alt="Ilustrasi masuk dan registrasi VisionStock">
+    <section id="masuk" aria-labelledby="judul-masuk">
+      <h2 id="judul-masuk">Masuk</h2>
+      <form action="dashboard.html" method="get" novalidate>
+        <p>
+          <label for="login-username">Username atau Email</label><br>
+          <input id="login-username" type="text" autocomplete="username" value="tartaglia">
+        </p>
+        <p>
+          <label for="login-password">Password</label><br>
+          <input id="login-password" type="password" autocomplete="current-password" value="tarutarlia">
+        </p>
+        <button type="submit">Masuk</button>
+      </form>
+      <details>
+        <summary>Pratinjau pesan login gagal</summary>
+        <p>Username atau password tidak sesuai. Silakan periksa kembali dan coba lagi.</p>
+      </details>
+      <details>
+        <summary>Pratinjau login berhasil</summary>
+        <p>Login berhasil.</p>
+        <p><a href="dashboard.html">Lanjut ke Dashboard</a></p>
+      </details>
+      <p>Belum memiliki akun?</p>
+      <form action="register.html" method="get">
+        <button type="submit">Daftar</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analisis Stok - VisionStock</title>
+</head>
+<body>
+  <header>
+    <p><a href="dashboard.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi aplikasi">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="data-stok.html">Data Stok</a></li>
+        <li><a href="analisis-stok.html" aria-current="page">Analisis Stok</a></li>
+        <li><a href="riwayat-transaksi.html">Riwayat Transaksi</a></li>
+        <li><a href="pengaturan.html">Pengaturan</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Analisis Stok</h1>
+    <p>Rekomendasi dihitung dari penjualan 30 hari terakhir untuk cakupan kebutuhan 30 hari.</p>
+    <section aria-labelledby="stok-saat-ini">
+      <h2 id="stok-saat-ini">Stok Saat Ini</h2>
+      <table>
+        <caption>Stok produk dan rekomendasi isi stok</caption>
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama Produk</th>
+            <th scope="col">Sisa Stok</th>
+            <th scope="col">Rekomendasi Isi Stok</th>
+            <th scope="col">Tanggal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <th scope="row">Beras</th>
+            <td>10</td>
+            <td>25</td>
+            <td>1/1/2026</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <th scope="row">Buku</th>
+            <td>25</td>
+            <td>35</td>
+            <td>1/1/2026</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <th scope="row">Pena</th>
+            <td>30</td>
+            <td>30</td>
+            <td>1/1/2026</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <th scope="row">Susu</th>
+            <td>30</td>
+            <td>50</td>
+            <td>1/1/2026</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <th scope="row">Telur</th>
+            <td>45</td>
+            <td>20</td>
+            <td>1/1/2026</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <th scope="row">Tepung</th>
+            <td>20</td>
+            <td>35</td>
+            <td>1/1/2026</td>
+          </tr>
+        </tbody>
+      </table>
+      <form action="data-stok.html" method="get">
+        <button type="submit">Edit Stok</button>
+      </form>
+    </section>
+    <section aria-labelledby="notifikasi-whatsapp">
+      <h2 id="notifikasi-whatsapp">Notifikasi WhatsApp</h2>
+      <p>Hubungkan WhatsApp di Pengaturan sebelum mengirim rekomendasi stok.</p>
+      <p><a href="pengaturan.html#whatsapp">Hubungkan WhatsApp</a></p>
+      <details>
+        <p>Ingin mengirim analisis ini ke WhatsApp?</p>
+        <button type="button">Kirim</button>
+        <button type="button">Batal</button>
+      </details>
+      <details>
+        <p>Notifikasi rekomendasi berhasil dikirim ke WhatsApp.</p>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengaturan - VisionStock</title>
+  <script src="assets/js/settings.js" defer></script>
+</head>
+<body>
+  <header>
+    <p><a href="dashboard.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi aplikasi">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="data-stok.html">Data Stok</a></li>
+        <li><a href="analisis-stok.html">Analisis Stok</a></li>
+        <li><a href="riwayat-transaksi.html">Riwayat Transaksi</a></li>
+        <li><a href="pengaturan.html" aria-current="page">Pengaturan</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Pengaturan</h1>
+    <section id="profil" aria-labelledby="judul-profil">
+      <h2 id="judul-profil">Edit Profil</h2>
+      <form id="profile-form">
+        <p>
+          <label for="nama">Nama</label>
+          <input id="nama" name="nama" type="text" autocomplete="name" required>
+        </p>
+        <p>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </p>
+        <p>
+          <label for="password-baru">Atur Ulang Password</label>
+          <input id="password-baru" name="password" type="password" autocomplete="new-password" minlength="8">
+          <br><small>Password minimal 8 karakter.</small>
+        </p>
+        <p>
+          <label for="konfirmasi-password">Konfirmasi Password</label>
+          <input id="konfirmasi-password" name="password_confirmation" type="password" autocomplete="new-password" minlength="8">
+        </p>
+        <button type="submit">Simpan</button>
+        <button type="button" class="back-to-dashboard">Kembali</button>
+      </form>
+      <p id="profile-status" role="status" aria-live="polite"></p>
+    </section>
+    <section id="whatsapp" aria-labelledby="judul-whatsapp">
+      <h2 id="judul-whatsapp">Hubungkan ke WhatsApp</h2>
+      <p id="whatsapp-connection-status">Status koneksi: Belum tersedia</p>
+      <form id="whatsapp-form">
+        <p>
+          <label for="nomor-whatsapp">Nomor Telepon</label>
+          <input id="nomor-whatsapp" name="nomor_whatsapp" type="tel" autocomplete="tel" placeholder="+62..." pattern="^\+[1-9][0-9]{7,14}$" required>
+          <br><small>Gunakan format internasional, misalnya +62.</small>
+        </p>
+        <button type="submit">Kirim</button>
+        <button type="button" class="back-to-dashboard">Kembali</button>
+      </form>
+      <p id="whatsapp-status" role="status" aria-live="polite"></p>
+      <details>
+        <summary>Pratinjau koneksi WhatsApp gagal</summary>
+        <p>WhatsApp belum berhasil terhubung. Periksa nomor telepon dan coba lagi.</p>
+        <p><a href="#whatsapp">Coba Lagi</a></p>
+      </details>
+      <details>
+        <summary>Pratinjau koneksi WhatsApp berhasil</summary>
+        <p>WhatsApp berhasil terhubung.</p>
+        <p><a href="dashboard.html">Kembali ke Pilih Menu</a></p>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

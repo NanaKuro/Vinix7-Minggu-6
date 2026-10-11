@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar - VisionStock</title>
+</head>
+<body>
+  <header>
+    <p><a href="landing-page.html"><strong>VisionStock</strong></a></p>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li>
+          <form action="login.html" method="get">
+            <button type="submit">Masuk</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Daftar ke VisionStock</h1>
+    <img src="assets/images/image-login-regis.png" alt="Ilustrasi masuk dan registrasi VisionStock">
+    <section id="daftar" aria-labelledby="judul-daftar">
+      <h2 id="judul-daftar">Daftar</h2>
+      <form action="dashboard.html" method="get" novalidate>
+        <p>
+          <label for="register-username">Username atau Email</label><br>
+          <input id="register-username" type="text" autocomplete="username">
+        </p>
+        <p>
+          <label for="register-password">Password</label><br>
+          <input id="register-password" type="password" autocomplete="new-password" minlength="8">
+          <br><small>Password minimal 8 karakter.</small>
+        </p>
+        <p>
+          <label for="register-password-confirm">Ulangi Password</label><br>
+          <input id="register-password-confirm" type="password" autocomplete="new-password" minlength="8">
+        </p>
+        <button type="submit">Daftar</button>
+      </form>
+      <details>
+        <summary>Pratinjau pesan registrasi gagal</summary>
+        <p>Pastikan data terisi dengan benar dan kedua password sama.</p>
+      </details>
+      <details>
+        <summary>Pratinjau registrasi berhasil</summary>
+        <p>Registrasi berhasil. Silakan masuk ke VisionStock.</p>
+        <p><a href="login.html">Kembali ke Masuk</a></p>
+      </details>
+    </section>
+    <p>Sudah memiliki akun?</p>
+    <form action="login.html" method="get">
+      <button type="submit">Masuk</button>
+    </form>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+</html>
